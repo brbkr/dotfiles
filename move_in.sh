@@ -12,7 +12,7 @@ if [ -d ~/.dotfiles ]; then
 	cd ~/.dotfiles
 	git pull --ff-only
 else
-	git clone https://github.com/brbkr/dotfiles ~/.dotfiles
+	git clone git@github.com:brbkr/dotfiles ~/.dotfiles
 fi
 
 [ -d ~/.git ] || mkdir ~/.git
