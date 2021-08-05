@@ -4,15 +4,6 @@
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-" Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Bundle 'vim-scripts/genutils'
-Bundle 'pcaneill/vim-perforce'
-call vundle#end()
-
 filetype plugin indent on
 
 let mapleader = "_"		" some maps will start with this char
