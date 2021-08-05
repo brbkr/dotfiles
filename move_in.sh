@@ -2,9 +2,7 @@
 
 set -e
 
-rm -f 	~/.bashrc \
-	~/.bash_profile
-	~/.cshrc \
+rm -f	~/.cshrc \
 	~/.login \
 	~/.mailrc \
 	~/.profile \
@@ -17,18 +15,21 @@ else
 	git clone https://github.com/brbkr/dotfiles ~/.dotfiles
 fi
 
-cd ~/.dotfiles
-for f in .???*; do
-	rm -f ~/$f
-	(cd ~/; ln -s .dotfiles/$f $f)
-done
-
+[ -d ~/.git ] || mkdir ~/.git
 [ -d ~/.ssh ] || mkdir ~/.ssh
 [ -d ~/.vim ] || mkdir ~/.vim
+
+cd ~/.dotfiles
+for i in .???*; do
+	[ "$i" = ".git" ] && continue
+	[ ! -f "$i" ] && continue
+	rm -f ~/$i
+	ln -s .dotfiles/$i ~/$i
+done
 
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git \
 		~/.vim/bundle/Vundle.vim
 fi
 
-echo "vim +PlugInstall +qall"
+echo "vim +PluginInstall +qall"
