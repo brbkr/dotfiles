@@ -1,6 +1,7 @@
 # .bashrc
 
 [ -z "$PS1" ] && return
+[ -f ~/.bashrc_local ] && . ~/.bashrc_local
 
 HISTCONTROL=ignoredups      # only add a command to history once
 HISTSIZE=10000
