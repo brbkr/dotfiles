@@ -1,10 +1,13 @@
 # .bashrc
 
 [ -z "$PS1" ] && return
+[ -t 1 ] || return
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 
 HISTCONTROL=ignoredups      # only add a command to history once
 HISTSIZE=10000
+PS1="; "
+
 set -o physical             # pwd returns physical paths
 set -o history              # enable history
 shopt -s checkwinsize       # update LINES and COLUMNS
@@ -89,7 +92,7 @@ export LS_COLORS="ow=01;90:di=01;90:ex=00;32"
 
 # color PS1 with error code display
 #   <tail pwd> [<non-zero exit status>] >
-if tty -s; then
+if false; then
     # foreground            # background
     PL='\[\033[m\]'                             # all plain
     FN='\[\033[0;30m\]'     BN='\[\033[40m\]'   # black
