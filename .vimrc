@@ -11,7 +11,7 @@ let mapleader = "_"		" some maps will start with this char
 set noai			" autoindenting is enabled in autocmd
 set   autowrite			" write file if we're going to change buffer
 set   backspace=indent,eol,start
-set   background=dark
+set   background=light
 set nobackup			" don't keep a backup file
 set   cinoptions=(0		" second line after ( should align after (
 set   cmdheight=2		" command height, need at least 2 with quickfix
@@ -57,7 +57,7 @@ map <Leader>q	:PF revert<CR>
 map <Leader>u	:PF sync<CR>
 map <Leader>a	:call P4Annotate()<CR>
 "map <Leader>a	:PF annotate -u -c -T<CR>
-map <Leader>l	:PF changes<CR>
+map <Leader>l	:PF changes %<CR>
 "map <Leader>p	:PF changes -s pending<CR>
 map <Leader>d	:PF diff<CR>
 
