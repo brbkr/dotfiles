@@ -106,8 +106,17 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" This stops hiding the cursor when it is on a paren
-highlight MatchParen ctermbg=4
+" When using a light background, vimdiff's background colors are hard to read
+hi DiffAdd      gui=none        guifg=DarkGreen     guibg=LightGray     ctermbg=LightGray   cterm=none
+hi DiffChange   gui=none        guifg=DarkCyan      guibg=LightGray     ctermbg=LightGray   cterm=none
+hi DiffDelete   gui=none        guifg=DarkRed       guibg=LightGray     ctermbg=LightGray   cterm=none
+hi DiffText     gui=underline   guifg=DarkCyan      guibg=LightGray     ctermbg=LightGray   cterm=underline
+
+hi SpellBad ctermbg=White ctermfg=Red cterm=undercurl gui=undercurl guifg=Red
+hi Search   ctermbg=LightGray ctermfg=Black
+hi MatchParen cterm=underline ctermbg=none ctermfg=none
+hi Error ctermfg=DarkRed ctermbg=LightGray
+hi Todo ctermfg=Yellow ctermbg=LightGray
 
 " Use ~/.vimrc-local for site-local customizations
 if glob("~/.vimrc-local") != ""

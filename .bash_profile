@@ -7,4 +7,4 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 [ -f ~/.bash_profile_local ] && . ~/.bash_profile_local
-[ "$JTB_BASHRC_LOADED" ] || . ~/.bashrc
+[ -f ~/.bash_profile_local ] && . ~/.bashrc
