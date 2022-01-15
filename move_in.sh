@@ -27,6 +27,12 @@ for i in .???*; do
 	ln -s .dotfiles/$i ~/$i
 done
 
+# macos
+if [ -d ~/.config/kiddy ]; then
+    rm -f ~/.config/kitty/kitty.conf
+    ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+fi
+
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git \
 		~/.vim/bundle/Vundle.vim
