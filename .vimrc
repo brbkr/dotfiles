@@ -25,7 +25,6 @@ set   ignorecase		" easier searching (ignores case)
 set   incsearch			" show search while typing it
 set   laststatus=2		" always have a status line
 set   lazyredraw		" don't redraw while executing commands
-set   restorescreen		" enable xterm screen saving/restoring
 set   ruler			" show the cursor position all the time
 set   scrolloff=3               " always show N lines around cursor
 set   shiftwidth=4		" this also handles things like c indenting
@@ -35,6 +34,7 @@ set   smartcase			" ignore case unless upper case used (searching)
 set   softtabstop=4		" hitting tab gets you 4 spaces
 set   tags=./tags,./../tags	" default tags
 set   title                     " set xterm titles when editing
+set   updatetime=300            " shorter error messages
 set   viminfo='20,\"50		" read/write a .viminfo file, don't store more
 set   wrap                      " scroll long lines rather than wrapping
 "
@@ -45,21 +45,6 @@ set t_vb=               " really, I mean don't ding, damnit
 " Misc bindings
 map <Leader>jl	:cd %:h<CR>		" cd to the dir of the edit file
 map <Leader>d   :call append(line('.'), strftime("%b %d %Y"))<CR>
-
-" Perforce settings
-let g:p4EnableMenu = 1
-let g:p4PromptToCheckout = 0
-runtime perforce/perforceutils.vim
-
-" Perforce key maps
-map <Leader>e	:PF edit<CR>
-map <Leader>q	:PF revert<CR>
-map <Leader>u	:PF sync<CR>
-map <Leader>a	:call P4Annotate()<CR>
-"map <Leader>a	:PF annotate -u -c -T<CR>
-map <Leader>l	:PF changes %<CR>
-"map <Leader>p	:PF changes -s pending<CR>
-map <Leader>d	:PF diff<CR>
 
 " filetype specific options
 if has("autocmd")
