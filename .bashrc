@@ -124,5 +124,3 @@ xterm-title()
     #   n=2, change window title to "string".
     printf "]0;%s" $STRING
 }
-
-export JTB_BASHRC_LOADED=1

@@ -7,4 +7,4 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 [ -f ~/.bash_profile_local ] && . ~/.bash_profile_local
-[ -f ~/.bash_profile_local ] && . ~/.bashrc
+[ -f ~/.bash_profile ] && . ~/.bashrc
