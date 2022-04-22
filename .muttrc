@@ -188,6 +188,11 @@ bind generic { top-page
 bind generic } bottom-page
 bind generic \177 last-entry
 
+bind pager j next-line
+bind pager k previous-line
+bind pager J next-entry
+bind pager K previous-entry
+
 macro index \cr '<enter-command>source ~/.muttrc<Enter>'
 
 macro index \cb "<pipe-message> urlview<Enter>"	# simulate the old browse-url function
