@@ -18,7 +18,7 @@ stty -ixon                  # disable Ctrl-s/Ctrl-q; use with readline instead
 
 #alias ls='ls -F --color'
 #alias grep='grep --color'
-#unset LS_COLORS
+unset LS_COLORS
 
 # PWD in xterm title
 if [ -n "$DISPLAY" ]; then
