@@ -27,7 +27,7 @@ for i in .???*; do
 	ln -s .dotfiles/$i ~/$i
 done
 
-cp -rsi ~/.dotfiles/.config ~
+(cd ~/.dotfiles/.config; tar c .) | (cd ~/.config; tar xv -)
 
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git \
