@@ -12,7 +12,7 @@ set imap_user = "jeff.brubaker@gmail.com"
 set imap_pass = "atehjfxzdsgirzgd"
 
 # Smtp settings
-set smtp_url = "smtps://jeff.brubaker@smtp.gmail.com"
+set smtp_url = "smtps://jeff.brubaker@gmail.com@smtp.gmail.com"
 set smtp_pass = "atehjfxzdsgirzgd"
 
 # Remote gmail folders
