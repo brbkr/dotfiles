@@ -1,0 +1,4 @@
+\.git
+\.gitignore
+.+~          # vim/emacs backup files
+\#.*\#       # vim/emacs autosave files
