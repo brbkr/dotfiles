@@ -36,7 +36,6 @@ set t_vb=               " really, I mean don't ding, damnit
 
 let mapleader = "_"		" some maps will start with this char
 
-" vimplug
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
@@ -107,3 +106,65 @@ highlight Visual ctermbg=White
 if glob("~/.vimrc-local") != ""
     source ~/.vimrc-local
 endif
+
+" CoC mappings
+nmap <silent> [d :call CocAction('diagnosticNext')<cr>
+nmap <silent> ]d :call CocAction('diagnosticPrevious')<cr>
+map <Leader>c   :CocDiagnostics<cr>
+
+" CoC
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Highlight the symbol and its references when holding the cursor.
+"autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+
+" Fzf
+nmap <Leader>f :Files<CR>
+nmap <Leader>b :Windows<CR>
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Run the Code Lens action on the current line.
+nmap <leader>cl  <Plug>(coc-codelens-action)
+
+" Support Ctrl-] and Ctrl-t
+if has('nvim') && exists('&tagfunc')
+        set tagfunc=CocTagFunc
+endif
+
