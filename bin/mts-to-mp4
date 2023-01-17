@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for i in "$@"; do
+	date=$(date --date=@$(stat --format="%Y" "$i") --iso-8601=seconds)
+	ffmpeg -i "$i" -c copy -metadata creation_time="$date" $(basename $i .MTS).mp4
+done
+exit 0
