@@ -7,8 +7,8 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 !URxvt.font:              x:-*-terminus-*-*-*-*-16-*-*-*-*-*-iso8859-1
 !URxvt.boldFont:          x:-*-terminus-*-*-*-*-16-*-*-*-*-*-iso8859-1
-URxvt.font:              xft:IBM Plex Mono:pixelsize=13
-URxvt.boldFont:          xft:IBM Plex Mono:pixelsize=13
+URxvt.font:              xft:JetBrains Mono NL:pixelsize=13
+URxvt.boldFont:          xft:JetBrains Mono NL:pixelsize=13
 ! See :help map-alt-keys in VIM
 URxvt.meta8:             false
 URxvt.scrollstyle:       plain
@@ -20,7 +20,7 @@ URxvt.scrollTtyKeypress: true
 URxvt.thickness: 0
 URxvt.saveLines:         8192
 URxvt.visualBell:        true
-URxvt.fading:            50
+URxvt.fading:            20
 URxvt.print-pipe: "cat > /dev/null"
 URxvt.perl-ext-common: default
 
@@ -95,26 +95,66 @@ URxvt.perl-ext-common: default
 !URxvt.scrollColor:#EDEFF1
 
 ! Muinebeag - black and white without any colors
-URxvt.color0:#191919
-URxvt.color1:#6f6f6f
-URxvt.color2:#545454
-URxvt.color3:#ced1d6
-URxvt.color4:#aeaeb0
-URxvt.color5:#b4b5b9
-URxvt.color6:#707073
-URxvt.color7:#e5e5e5
-URxvt.color8:#2e2e2e
-URxvt.color9:#7d7d7d
-URxvt.color10:#656565
-URxvt.color11:#d2d5da
-URxvt.color12:#b6b6b7
-URxvt.color13:#bbbcc0
-URxvt.color14:#7e7e81
-URxvt.color15:#cbcbcc
-URxvt.foreground:#b4b5b9
-URxvt.background:#090909
-URxvt.cursorColor:#666666
-URxvt.scrollColor:#0d0d0d
+!URxvt.color0:#191919
+!URxvt.color1:#6f6f6f
+!URxvt.color2:#545454
+!URxvt.color3:#ced1d6
+!URxvt.color4:#aeaeb0
+!URxvt.color5:#b4b5b9
+!URxvt.color6:#707073
+!URxvt.color7:#e5e5e5
+!URxvt.color8:#2e2e2e
+!URxvt.color9:#7d7d7d
+!URxvt.color10:#656565
+!URxvt.color11:#d2d5da
+!URxvt.color12:#b6b6b7
+!URxvt.color13:#bbbcc0
+!URxvt.color14:#7e7e81
+!URxvt.color15:#cbcbcc
+!URxvt.foreground:#b4b5b9
+!URxvt.background:#090909
+!URxvt.cursorColor:#666666
+!URxvt.scrollColor:#0d0d0d
+
+! base16-grayscale
+! special
+*.foreground:   #b9b9b9
+*.background:   #101010
+*.cursorColor:  #b9b9b9
+*.scrollColor:  #303030
+
+! black
+*.color0:       #101010
+*.color8:       #525252
+
+! red
+*.color1:       #7c7c7c
+*.color9:       #7c7c7c
+
+! green
+*.color2:       #8e8e8e
+*.color10:      #8e8e8e
+
+! yellow
+*.color3:       #a0a0a0
+*.color11:      #a0a0a0
+
+! blue
+*.color4:       #686868
+*.color12:      #686868
+
+! magenta
+*.color5:       #747474
+*.color13:      #747474
+
+! cyan
+*.color6:       #868686
+*.color14:      #868686
+
+! white
+*.color7:       #b9b9b9
+*.color15:      #f7f7f7
+
 
 ! Nord
 !   _write palette "['$nord1', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord8', '$nord5', '$nord3', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord7', '$nord6']"
