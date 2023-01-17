@@ -24,4 +24,6 @@ for i in *; do
     [ -d $i ] && stow $i
 done
 
-echo "vim +PluginInstall +qall"
+echo "vim +PluginInstall"
+echo "nvim +PluginInstall"
+

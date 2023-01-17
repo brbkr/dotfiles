@@ -36,6 +36,31 @@ set t_vb=               " really, I mean don't ding, damnit
 
 let mapleader = "_"		" some maps will start with this char
 
+" vimplug
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+if has('nvim')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+endif
+Plug 'noahfrederick/vim-noctu'
+Plug 'vim-utils/vim-man'
+Plug 'preservim/nerdtree'
+Plug 'ngemily/vim-vp4'
+call plug#end()
+
+colors noctu
+
+if has('nvim')
+set notermguicolors     " not supported by urxvt yet
+endif
+
 " Misc bindings
 map <Leader>jl	:cd %:h<CR>		" cd to the dir of the edit file
 map <Leader>d   :call append(line('.'), strftime("%b %d %Y"))<CR>
