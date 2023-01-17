@@ -16,9 +16,11 @@ shopt -s histappend         # don't overwrite .bash_history
 shopt -s extglob            # enable extended glob pattern matching
 stty -ixon                  # disable Ctrl-s/Ctrl-q; use with readline instead
 
-#alias ls='ls -F --color'
-#alias grep='grep --color'
-unset LS_COLORS
+if [ "$(uname -s)" = "Linux" ]; then
+    alias ls='ls -F --color'
+    alias grep='grep --color'
+    unset LS_COLORS
+fi
 
 # PWD in xterm title
 if [ -n "$DISPLAY" ]; then
