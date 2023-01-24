@@ -19,10 +19,17 @@ fi
 [ -d ~/.ssh ] || mkdir ~/.ssh
 [ -d ~/.vim ] || mkdir ~/.vim
 
+result=0
 cd ~/dotfiles
 for i in *; do
-    [ -d $i ] && stow $i
+    if [ -d $i ]; then
+        stow $i || result=1
+    fi
 done
+
+if [ $result -ne 0 ]; then
+    exit 1
+fi
 
 echo "vim +PluginInstall"
 echo "nvim +PluginInstall"
