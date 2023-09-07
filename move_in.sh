@@ -30,7 +30,3 @@ done
 if [ $result -ne 0 ]; then
     exit 1
 fi
-
-echo "vim +PluginInstall"
-echo "nvim +PluginInstall"
-

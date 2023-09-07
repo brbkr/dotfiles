@@ -1,5 +1,4 @@
 # .bashrc
-
 [ -z "$PS1" ] && return
 [ -t 1 ] || return
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
@@ -39,3 +38,6 @@ xterm-title()
     printf "]0;%s" $STRING
 }
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

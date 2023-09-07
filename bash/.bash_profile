@@ -7,4 +7,9 @@ export PAGER=less
 #export LANG=en_US.UTF-8
 
 [ -f ~/.bash_profile_local ] && . ~/.bash_profile_local
-[ -f ~/.bash_profile ] && . ~/.bashrc
+
+# When running in an interactive login shell, source bashrc if it exists
+if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
+    # include .bashrc if it exists
+    [ -f ~/.bashrc ] && . ~/.bashrc
+fi

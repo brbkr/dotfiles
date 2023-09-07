@@ -36,30 +36,6 @@ set t_vb=               " really, I mean don't ding, damnit
 
 let mapleader = "_"		" some maps will start with this char
 
-call plug#begin()
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
-if has('nvim')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-endif
-Plug 'noahfrederick/vim-noctu'
-Plug 'vim-utils/vim-man'
-Plug 'preservim/nerdtree'
-Plug 'ngemily/vim-vp4'
-call plug#end()
-
-colors noctu
-
-if has('nvim')
-set notermguicolors     " not supported by urxvt yet
-endif
-
 " Misc bindings
 map <Leader>jl	:cd %:h<CR>		" cd to the dir of the edit file
 map <Leader>d   :call append(line('.'), strftime("%b %d %Y"))<CR>
@@ -90,81 +66,65 @@ endif
 syntax on
 
 " When using a light background, vimdiff's background colors are hard to read
-hi DiffAdd      guibg=Green ctermbg=Green guifg=Black ctermfg=Black
-hi DiffDelete   guibg=Gray ctermbg=Red guifg=Black ctermfg=Black
-hi DiffChange   guibg=#f0f0f0 ctermbg=White guifg=Black ctermfg=Black
-hi DiffText     guibg=LightGray ctermbg=LightGray guifg=Black ctermfg=Black
+"hi DiffAdd      guibg=Green ctermbg=Green guifg=Black ctermfg=Black
+"hi DiffDelete   guibg=Gray ctermbg=Red guifg=Black ctermfg=Black
+"hi DiffChange   guibg=#f0f0f0 ctermbg=White guifg=Black ctermfg=Black
+"hi DiffText     guibg=LightGray ctermbg=LightGray guifg=Black ctermfg=Black
+"hi SpellBad ctermbg=White ctermfg=Red cterm=undercurl gui=undercurl guifg=Red
+"hi Search   ctermbg=LightGray ctermfg=Black
+"hi MatchParen cterm=underline ctermbg=none ctermfg=none
+"hi Error ctermfg=DarkRed ctermbg=LightGray
+"hi Todo ctermfg=Yellow ctermbg=LightGray
 
-hi SpellBad ctermbg=White ctermfg=Red cterm=undercurl gui=undercurl guifg=Red
-hi Search   ctermbg=LightGray ctermfg=Black
-hi MatchParen cterm=underline ctermbg=none ctermfg=none
-hi Error ctermfg=DarkRed ctermbg=LightGray
-hi Todo ctermfg=Yellow ctermbg=LightGray
-highlight Visual ctermbg=White
+" Also with dark background
+hi DiffAdd      guifg=Green ctermfg=Green guibg=Black ctermbg=Black
+hi DiffDelete   guifg=Gray ctermfg=Red guibg=Black ctermbg=Black
+hi DiffChange   guifg=#f0f0f0 ctermfg=White guibg=Black ctermbg=Black
+hi DiffText     guifg=Gray ctermfg=Gray guibg=Black ctermbg=Black
+hi SpellBad ctermfg=White ctermbg=Red cterm=undercurl gui=undercurl guibg=Red
+hi Search   ctermfg=Black ctermbg=Yellow
+hi MatchParen cterm=underline ctermbg=none ctermbg=none
+hi Error ctermfg=Black ctermbg=Red
+hi Todo ctermfg=Black ctermbg=Yellow
+
+"hi SpellBad ctermbg=White ctermfg=Red cterm=undercurl gui=undercurl guifg=Red
+"hi Search   ctermbg=LightGray ctermfg=Black
+"hi MatchParen cterm=underline ctermbg=none ctermfg=none
+"hi Error ctermfg=DarkRed ctermbg=LightGray
+"hi Todo ctermfg=Yellow ctermbg=LightGray
+highlight Visual ctermbg=Black
 
 " Use ~/.vimrc-local for site-local customizations
 if glob("~/.vimrc-local") != ""
     source ~/.vimrc-local
 endif
 
-" CoC mappings
-nmap <silent> [d :call CocAction('diagnosticNext')<cr>
-nmap <silent> ]d :call CocAction('diagnosticPrevious')<cr>
-map <Leader>c   :CocDiagnostics<cr>
-
-" CoC
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-" Highlight the symbol and its references when holding the cursor.
-"autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Nerdtree
-nnoremap <leader>n :NERDTreeFocus<CR>
-"nnoremap <C-n> :NERDTree<CR>
-"nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
-
 " Fzf
 nmap <Leader>f :Files<CR>
 nmap <Leader>b :Windows<CR>
 
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+" NERDTree
+nmap <Leader>t :NERDTree %<CR>
 
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Run the Code Lens action on the current line.
-nmap <leader>cl  <Plug>(coc-codelens-action)
+" Inspect $TERM instad of t_Co as it works in neovim as well
+"if &term =~ '256color'
+"  " Enable true (24-bit) colors instead of (8-bit) 256 colors.
+"  " :h true-color
+"  if has('termguicolors')
+"    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"    set termguicolors
+"  endif
+"  colorscheme base16-default-dark
+"endif
 
-" Support Ctrl-] and Ctrl-t
-if has('nvim') && exists('&tagfunc')
-        set tagfunc=CocTagFunc
-endif
+"if has('nvim')
+"    " Currently disabled to use urxvt, which doesn't support this
+"    " Urxvt supports tmux clipboard setting, but gnome-terminal does not
+"    " Now trying xterm
+"    set notermguicolors
+"else
+"    highlight Normal ctermbg=none
+"endif
 
