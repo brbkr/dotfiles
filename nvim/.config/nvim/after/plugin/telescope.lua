@@ -1,0 +1,6 @@
+local telescope = require('telescope.builtin')
+vim.keymap.set("n", "<leader>tf", telescope.find_files, {})
+vim.keymap.set("n", "<leader>tq", telescope.quickfix, {})
+vim.keymap.set("n", "<leader>tg", function()
+	telescope.grep_string({ search = vim.fn.input("Grep > ") })
+end)
