@@ -1,6 +1,7 @@
 #!/bin/sh
 
 set -e
+set -x
 
 rm -f	~/.cshrc \
 	~/.login \
@@ -19,14 +20,4 @@ fi
 [ -d ~/.ssh ] || mkdir ~/.ssh
 [ -d ~/.vim ] || mkdir ~/.vim
 
-result=0
-cd ~/dotfiles
-for i in *; do
-    if [ -d $i ]; then
-        stow $i || result=1
-    fi
-done
-
-if [ $result -ne 0 ]; then
-    exit 1
-fi
+(cd ~/dotfiles; stow */)
