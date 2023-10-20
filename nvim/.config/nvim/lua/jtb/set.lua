@@ -1,7 +1,6 @@
 vim.opt.number = false
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 4
-vim.opt.colorcolumn = "80"
 
 vim.opt.tabstop = 8
 vim.opt.softtabstop = 4
