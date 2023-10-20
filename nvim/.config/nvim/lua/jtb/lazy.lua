@@ -12,20 +12,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  defaults = { lazy = true },
   "junegunn/fzf",
   "RRethy/nvim-base16",
   "sainnhe/everforest",
   "rebelot/kanagawa.nvim",
   "rose-pine/neovim",
   "ramojus/mellifluous.nvim",
-  "vim-utils/vim-man",
-  "preservim/nerdtree",
   "ngemily/vim-vp4",
+  "vim-utils/vim-man",
+  "neovim/nvim-lspconfig",
   { 'nvim-telescope/telescope.nvim', 
   	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-lua/plenary.nvim"
 	}
   },
-  "neovim/nvim-lspconfig",
 })
