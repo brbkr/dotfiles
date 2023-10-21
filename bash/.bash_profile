@@ -12,6 +12,7 @@ export PAGER=less
 # Adapted from https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
 #
 function ssh-agent-env {
+    [ -z "$HOSTNAME" ] && export HOSTNAME=$(hostname)
     local readonly envfile=~/.ssh/agent_env_$HOSTNAME
     [ -f $envfile ] && . $envfile
     if [ -z "$SSH_AGENT_PID" ] || ! ps -ef | grep "$SSH_AGENT_PID" | grep ssh-agent$ >/dev/null 2>&1; then
