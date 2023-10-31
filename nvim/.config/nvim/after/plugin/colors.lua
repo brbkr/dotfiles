@@ -1,6 +1,4 @@
--- Disabled: found that this was affecting startup performance
-
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 -- -- vim.g.everforest_background = 'medium'
 -- -- vim.g.everforest_better_performance = 1
@@ -11,7 +9,7 @@
 -- -- require('rose-pine').setup({ disable_italics = true, })
 -- -- vim.cmd.colorscheme("base16-grayscale-dark")
 -- vim.cmd.colorscheme("base16-default-dark")
--- vim.cmd.colorscheme("mellifluous")
+vim.cmd.colorscheme("mellifluous")
 -- -- vim.cmd.colorscheme("kanagawa-dragon")
 -- -- vim.cmd.colorscheme("everforest")
 
@@ -24,14 +22,14 @@
 -- --     base0C = '#86c1b9', base0D = '#7cafc2', base0E = '#ba8baf', base0F = '#a16946'
 -- --     })
 
--- -- Disable background (some colorschemes use this)
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" });
--- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" });
--- vim.api.nvim_set_hl(0, "StatusLine", { bg = "#404040" });
--- vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "#282828" });
--- vim.api.nvim_set_hl(0, "Comment", { fg = "#707070" });
--- vim.api.nvim_set_hl(0, "TSComment", { fg = "#707070" });
--- -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" });
+-- Disable background (some colorschemes use this)
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" });
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" });
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "#404040" });
+vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "#282828" });
+vim.api.nvim_set_hl(0, "Comment", { fg = "#707070" });
+vim.api.nvim_set_hl(0, "TSComment", { fg = "#707070" });
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" });
 
 -- -- Another option is to just use the terminal
 -- -- vim.opt.termguicolors = true
