@@ -1,0 +1,83 @@
+# Gmail IMAP setup
+set from = "jeff.brubaker@gmail.com"
+set realname = "Jeff Brubaker"
+set imap_user = "jeff.brubaker@gmail.com"
+set imap_pass = "qotb ccwg gmzo krop"
+set smtp_url = "smtps://jeff.brubaker@gmail.com@smtp.gmail.com"
+set smtp_pass = "qotb ccwg gmzo krop"
+
+set copy=no			# don't save a copy of outgoing messages b/c gmail
+set move=no			# don't remove messages from INBOX after read
+set ssl_force_tls = yes
+set mail_check = 60
+set timeout = 10
+
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
+
+set abort_unmodified=yes	# automatically abort replies if I don't
+				# change the message
+set alias_file=~/.mail_aliases	# where I keep my aliases
+set autoedit			# go to the editor right away when composing
+set noconfirmappend		# don't ask me if i want to append to mailboxes
+set confirmcreate		# prompt when creating new files
+set delete=yes			# purge deleted messages without asking
+set edit_headers		# let me edit the message header when composing
+set fast_reply			# skip initial prompts when replying
+set include			# always include messages when replying
+set pager_index_lines=6		# how many index lines to show in the pager
+set pager_stop=yes		# don't go to the next message when paging to the end
+set prompt_after=no		# don't prompt when the pager exits
+set reply_to			# always use reply-to if present
+set reverse_name		# use my address as it appears in the message
+				# i am replying to
+set save_empty=no		# don't delete empty mailboxes
+set sort=threads		# primary sorting method
+set sort_browser=reverse-date	# how to sort files in the dir browser
+set tilde			# virtual lines to pad blank lines in the pager
+set use_domain=no		# don't qualify local addresses with $domain
+set implicit_autoview=yes	# pager shows parts having a mailcap viewer
+set pgp_verify_sig=no		# don't automatically verify message signatures
+set write_inc=25		# show progress while writing mailboxes
+
+# Key bindings
+# ============
+#
+#	maps:
+#		alias		alias menu
+#		attach		attachment menu
+#		browser		directory browser
+#		compose		compose menu
+#		index		message index
+#		pgp		pgp menu
+#		postpone	postponed message recall menu
+#		generic		generic keymap for all of the above
+#		editor		line editor
+#		pager		text viewer
+#		
+
+bind pager j next-line
+bind pager k previous-line
+bind pager J next-entry
+bind pager K previous-entry
+
+macro index \cr '<enter-command>source ~/.muttrc<Enter>'
+macro index \cb "<pipe-message> urlview<Enter>"	# simulate the old browse-url function
+
+macro index ! "<save-message>+spam<Enter>"
+macro pager ! "<save-message>+spam<Enter>"
+
+bind index g first-entry
+bind index G last-entry
+bind pager G bottom
+
+# Automatically use entries from ~/.mailcap to view these MIME types
+#
+#	auto_view <type> [ <type> ... ]
+
+auto_view application/x-gunzip
+auto_view application/x-gzip
+auto_view text/html
