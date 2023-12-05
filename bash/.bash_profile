@@ -22,9 +22,9 @@ function ssh-agent-env {
     fi
 }
 function ssh-add-all {
-    ssh-add ~/.ssh/id_synopsys
-    ssh-add ~/.ssh/id_github
-    ssh-add ~/.ssh/id_gitlab
+    for f in ~/.ssh/*.pub; do
+        ssh-add ~/.ssh/$(basename $f .pub)
+    done
 }
 ssh-agent-env
 
