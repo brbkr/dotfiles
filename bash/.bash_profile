@@ -16,7 +16,7 @@ function ssh-agent-env {
     local readonly envfile=~/.ssh/agent_env_$HOSTNAME
     [ -f $envfile ] && . $envfile
     if [ -z "$SSH_AGENT_PID" ] || ! ps -ef | grep "$SSH_AGENT_PID" | grep ssh-agent$ >/dev/null 2>&1; then
-	/usr/bin/ssh-agent | sed 's/^echo/#echo/' >$envfile || return 1
+	ssh-agent | sed 's/^echo/#echo/' >$envfile || return 1
 	chmod 600 $envfile
 	. $envfile
     fi
