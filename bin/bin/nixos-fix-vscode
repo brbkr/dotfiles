@@ -7,7 +7,7 @@ if ! [ -x "$node" ]; then
     echo "Install node.js before using this script"
     exit 1
 fi
-for i in ~/.vscode-server/bin/*; do
+for i in ~/.vscode-server/bin/*/node ~/.vscode-server/cli/servers/Stable-*/server/node; do
     echo "Fixing vscode-server in $i..."
-    ln -sf ${node} $i/node
+    ln -sf ${node} $i
 done
