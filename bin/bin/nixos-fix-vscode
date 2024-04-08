@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Replace node binaries in ~/.vscode-server with symbnolic links to the system package.
+#
+node=$(which node)
+if ! [ -x "$node" ]; then
+    echo "Install node.js before using this script"
+    exit 1
+fi
+for i in ~/.vscode-server/bin/*; do
+    echo "Fixing vscode-server in $i..."
+    ln -sf ${node} $i/node
+done
