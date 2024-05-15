@@ -21,11 +21,6 @@ if [ "$(uname -s)" = "Linux" ]; then
     unset LS_COLORS
 fi
 
-# PWD in xterm title
-if [ -n "$DISPLAY" ]; then
-    PROMPT_COMMAND='printf "\033]0;[%s] %s\007" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
-fi
-
 xterm-title()
 {
     # The character sequence to change the title looks like this:
@@ -37,5 +32,8 @@ xterm-title()
     #   n=2, change window title to "string".
     echo -en "\e]0;$*\a"
 }
+
+# PWD in xterm title
+PROMPT_COMMAND='xterm-title ${PWD/#$HOME/~} [${HOSTNAME%%.*}]'
 
 set -o history              # enable history
