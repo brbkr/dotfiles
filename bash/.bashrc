@@ -2,13 +2,13 @@
 [ -z "$PS1" ] && return
 [ -t 1 ] || return
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 HISTCONTROL=ignoredups      # only add a command to history once
 HISTSIZE=10000
 PS1="; "
 
 set -o physical             # pwd returns physical paths
-set -o history              # enable history
 shopt -s checkwinsize       # update LINES and COLUMNS
 shopt -s cmdhist            # multi-line commands go in history as 1 line
 shopt -s histappend         # don't overwrite .bash_history
@@ -35,7 +35,7 @@ xterm-title()
     #   n=0, change icon name and window title to "string",
     #   n=1, change icon name to "string",
     #   n=2, change window title to "string".
-    printf "]0;%s" $STRING
+    echo -en "\e]0;$*\a"
 }
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+set -o history              # enable history
