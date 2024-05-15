@@ -3,6 +3,7 @@
 export XEDITOR="gvim -f"
 export EDITOR=vim
 export PAGER=less
+export MAN_POSIXLY_CORRECT=1	# Suppresses the "What manual page do you want?" prompt
 #export LC_ALL=en_US.UTF-8
 #export LANG=en_US.UTF-8
 
