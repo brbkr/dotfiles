@@ -1,5 +1,8 @@
-vim.opt.termguicolors = true
+-- Another option is to just use the terminal
+-- vim.opt.termguicolors = false
+-- vim.cmd.colorscheme("default")
 
+vim.opt.termguicolors = true
 -- -- vim.g.everforest_background = 'medium'
 -- -- vim.g.everforest_better_performance = 1
 -- -- vim.g.everforest_enable_italic = 0
@@ -31,6 +34,3 @@ vim.api.nvim_set_hl(0, "Comment", { fg = "#707070" });
 vim.api.nvim_set_hl(0, "TSComment", { fg = "#707070" });
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" });
 
--- -- Another option is to just use the terminal
--- -- vim.opt.termguicolors = true
--- -- vim.cmd.colorscheme("default")

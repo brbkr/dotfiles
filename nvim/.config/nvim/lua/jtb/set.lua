@@ -1,4 +1,4 @@
-vim.opt.number = false
+vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 4
 
@@ -15,3 +15,6 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.visualbell = false
+
+-- Use 'gx' to open an item under the cursor in the default application
+vim.g.netrw_browsex_viewer = "xdg-open"

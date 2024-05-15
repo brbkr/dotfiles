@@ -12,6 +12,10 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>Y", "\"+Y")
 
+vim.keymap.set("n", "<leader>w", function()
+    vim.opt.wrap = not(vim.opt.wrap:get());
+end)
+
 -- Disable 'Q' (Ex mode)
 vim.keymap.set("n", "Q", "<nop>")
 
