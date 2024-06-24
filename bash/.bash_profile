@@ -13,6 +13,7 @@ export MAN_POSIXLY_CORRECT=1	# Suppresses the "What manual page do you want?" pr
 # Adapted from https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
 #
 function ssh-agent-env {
+    [ -n "$LSB_JOBID" ] && return
     [ -z "$HOSTNAME" ] && export HOSTNAME=$(hostname)
     local readonly envfile=~/.ssh/agent_env_$HOSTNAME
     [ -f $envfile ] && . $envfile
