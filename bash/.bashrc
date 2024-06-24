@@ -1,4 +1,7 @@
 # .bashrc
+# vscode
+[ -d ~/bin ] && PATH=~/bin:$PATH
+
 [ -z "$PS1" ] && return
 [ -t 1 ] || return
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
