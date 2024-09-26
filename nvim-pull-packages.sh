@@ -6,13 +6,19 @@ PACKPATH=~/.local/share/nvim/site/start
 
 function pullpackage()
 {
-    [ $# -eq 2 ] || exit 1
+    [ $# -eq 1 ] || exit 1
     set -e
     mkdir -p $PACKPATH
-    (cd $PACKPATH; if [ -d $1 ]; then cd $1; git pull; else git clone $2 $1; fi)
+    local readonly gh=https://github.com/$1
+    local readonly bn=$(basename $gh)
+    (cd $PACKPATH; if [ -d $bn ]; then cd $bn; git pull; else git clone $gh $bn; fi)
 }
 
 set -x
-pullpackage nvim-lspconfig https://github.com/neovim/nvim-lspconfig
-pullpackage base16-nvim https://github.com/RRethy/base16-nvim
-pullpackage vim-vp4 https://github.com/ngemily/vim-vp4
+pullpackage neovim/nvim-lspconfig
+pullpackage RRethy/base16-nvim
+pullpackage ngemily/vim-vp4
+pullpackage junegunn/fzf
+pullpackage junegunn/fzf.vim
+
+(cd ~/.fzf; git pull)
