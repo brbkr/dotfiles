@@ -30,13 +30,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end
 })
 
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---     pattern = "python",
---     callback = function(ev)
--- 	require'lspconfig'.pyright.setup{}
---     end
--- })
-
 -- Perforce commit messages
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = '/tmp/tmp.[0-9]*.[0-9]*.[0-9]*',
@@ -94,6 +87,6 @@ vim.keymap.set('n', '<leader>fb', ':Buffers<CR>')
 vim.keymap.set('n', '<leader>fc', ':Colors<CR>')
 vim.keymap.set('n', '<leader>ff', ':Files<CR>')
 
--- LSP
+-- LSP -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.clangd.setup{}
