@@ -89,6 +89,11 @@ vim.keymap.set("n", "<leader>pe", ":Vp4Edit<CR>")
 vim.keymap.set("n", "<leader>pl", ":Vp4Filelog<CR>")
 vim.keymap.set("n", "<leader>pr", ":Vp4Reopen<CR>")
 
+-- FZF
+vim.keymap.set('n', '<leader>fb', ':Buffers<CR>')
+vim.keymap.set('n', '<leader>fc', ':Colors<CR>')
+vim.keymap.set('n', '<leader>ff', ':Files<CR>')
+
 -- LSP
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.clangd.setup{}
