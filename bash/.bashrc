@@ -7,6 +7,13 @@
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# Colors
+BASE16_SHELL="$HOME/.config/base16-shell/"
+if  [ -s "$BASE16_SHELL/profile_helper.sh" ]; then
+    . "$BASE16_SHELL/profile_helper.sh"
+fi
+base16_default-dark
+
 HISTCONTROL=ignoredups      # only add a command to history once
 HISTSIZE=10000
 PS1="; "
