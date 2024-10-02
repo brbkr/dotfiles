@@ -22,3 +22,7 @@ pullpackage junegunn/fzf
 pullpackage junegunn/fzf.vim
 
 (cd ~/.fzf; git pull)
+
+# 0.53.0 has error: unknown option: --highlight-line
+# 0.54.0 has error: unknown option: --wrap-sign
+(cd ~/.fzf; git checkout tags/0.52.1)
