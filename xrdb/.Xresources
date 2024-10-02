@@ -14,18 +14,11 @@ XTerm*font3: -*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
 XTerm*font4: -*-terminus-medium-r-*-*-18-*-*-*-c-*-*-*
 XTerm*font5: -*-terminus-medium-r-*-*-24-*-*-*-c-*-*-*
 XTerm*font6: -*-terminus-medium-r-*-*-32-*-*-*-c-*-*-*
-!XTerm*font: -*-tamzenforpowerline-medium-r-normal-*-16-*-*-*-*-*-*-*
-!XTerm*font1: -*-tamzenforpowerline-medium-r-normal-*-9-*-*-*-*-*-*-*
-!XTerm*font2: -*-tamzenforpowerline-medium-r-normal-*-12-*-*-*-*-*-*-*
-!XTerm*font3: -*-tamzenforpowerline-medium-r-normal-*-13-*-*-*-*-*-*-*
-!XTerm*font4: -*-tamzenforpowerline-medium-r-normal-*-15-*-*-*-*-*-*-*
-!XTerm*font5: -*-tamzenforpowerline-medium-r-normal-*-16-*-*-*-*-*-*-*
-!XTerm*font6: -*-tamzenforpowerline-medium-r-normal-*-20-*-*-*-*-*-*-*
 XTerm*faceName:JetBrains Mono NL
-XTerm*faceSize:9.0
+XTerm*faceSize:12.0
 XTerm*allowBoldFonts: false
 ! Set to true to switch to Xft fonts
-XTerm.vt100.renderFont: false
+XTerm.vt100.renderFont: true
 XTerm.vt100.colorBDMode: true
 
 ! rxvt-unicode (urxvt) settings
@@ -195,4 +188,26 @@ URxvt.pointerColor2: black
 *.color14:      #75b5aa
 *.color7:       #d0d0d0
 *.color15:      #f5f5f5
+
+! yui
+!*.foreground:   #504944
+!*.background:   #eeeeee
+!*.cursorColor:  #d1882f
+!*.scrollColor:	#504944
+!*.color0:       #504944
+!*.color8:       #69605a
+!*.color1:       #d30505
+!*.color9:       #d30505
+!*.color2:       #5e8a36
+!*.color10:      #5e8a36
+!*.color3:       #bba53b
+!*.color11:      #bba53b
+!*.color4:       #296e92
+!*.color12:      #296e92
+!*.color5:       #60389b
+!*.color13:      #60389b
+!*.color6:       #377166
+!*.color14:      #377166
+!*.color7:       #bfb8b3
+!*.color15:      #d9c046
 
