@@ -81,6 +81,7 @@ vim.keymap.set("n", "<leader>pd", ":Vp4Diff<CR>")
 vim.keymap.set("n", "<leader>pe", ":Vp4Edit<CR>")
 vim.keymap.set("n", "<leader>pl", ":Vp4Filelog<CR>")
 vim.keymap.set("n", "<leader>pr", ":Vp4Reopen<CR>")
+vim.keymap.set("n", "<leader>p<return>", ":Vp4 describe <cword><CR>")
 
 -- FZF
 vim.keymap.set('n', '<leader>fb', ':Buffers<CR>')

@@ -8,11 +8,19 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Colors
-BASE16_SHELL="$HOME/.config/base16-shell/"
-if  [ -s "$BASE16_SHELL/profile_helper.sh" ]; then
-    . "$BASE16_SHELL/profile_helper.sh"
-fi
-base16_default-dark
+#
+# - Experimenting a bit here.  I prefer to allow vscode to define its own
+#   colors.
+# 
+#if [ -z "$VSCODE_IPC_HOOK_CLI" ]; then
+#    BASE16_SHELL="$HOME/.config/base16-shell/"
+#    if  [ -s "$BASE16_SHELL/profile_helper.sh" ]; then
+#	. "$BASE16_SHELL/profile_helper.sh"
+#    fi
+#fi
+#if [ -z "$VSCODE_IPC_HOOK_CLI" ]; then
+#    base16_default-dark
+#fi
 
 HISTCONTROL=ignoredups      # only add a command to history once
 HISTSIZE=10000
@@ -26,7 +34,7 @@ shopt -s extglob            # enable extended glob pattern matching
 stty -ixon                  # disable Ctrl-s/Ctrl-q; use with readline instead
 
 if [ "$(uname -s)" = "Linux" ]; then
-    alias ls='ls -F --color'
+    alias ls='ls -F --color=never'
     alias grep='grep --color'
     unset LS_COLORS
 fi
