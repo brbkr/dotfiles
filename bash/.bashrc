@@ -54,4 +54,7 @@ xterm-title()
 # PWD in xterm title
 PROMPT_COMMAND='xterm-title ${PWD/#$HOME/~} [${HOSTNAME%%.*}]'
 
+# Direnv support
+[ -x ~/bin/direnv ] && eval "$(direnv hook bash)"
+
 set -o history              # enable history
