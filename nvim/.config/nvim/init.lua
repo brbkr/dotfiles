@@ -15,6 +15,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.termguicolors = true
 vim.cmd("colorscheme base16-default-dark")
+-- vim.cmd("colorscheme base16-grayscale-light")
 
 vim.opt.visualbell = false
 
