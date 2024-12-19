@@ -7,13 +7,13 @@ XTerm.vt100.scrollbar.width: 8
 XTerm.vt100.translations: #override \n\
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
-XTerm*font: -*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
-XTerm*font1: -*-terminus-medium-r-*-*-12-*-*-*-c-*-*-*
-XTerm*font2: -*-terminus-medium-r-*-*-14-*-*-*-c-*-*-*
-XTerm*font3: -*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
-XTerm*font4: -*-terminus-medium-r-*-*-18-*-*-*-c-*-*-*
-XTerm*font5: -*-terminus-medium-r-*-*-24-*-*-*-c-*-*-*
-XTerm*font6: -*-terminus-medium-r-*-*-32-*-*-*-c-*-*-*
+XTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-c-*-*-*
+XTerm*font1: -*-terminus-medium-r-*-*-14-*-*-*-c-*-*-*
+XTerm*font2: -*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
+XTerm*font3: -*-terminus-medium-r-*-*-18-*-*-*-c-*-*-*
+XTerm*font4: -*-terminus-medium-r-*-*-20-*-*-*-c-*-*-*
+XTerm*font5: -*-terminus-medium-r-*-*-26-*-*-*-c-*-*-*
+XTerm*font6: -*-terminus-medium-r-*-*-34-*-*-*-c-*-*-*
 XTerm*faceName:JetBrains Mono NL
 XTerm*faceSize:12.0
 XTerm*allowBoldFonts: false
@@ -30,10 +30,10 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 !URxvt.font:              x:9x15
 !URxvt.boldFont:          x:9x15
-URxvt.font:              x:-*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
-URxvt.boldFont:          x:-*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
-!URxvt.font:              xft:JetBrains Mono NL:pixelsize=13
-!URxvt.boldFont:          xft:JetBrains Mono NL:pixelsize=13
+!URxvt.font:              x:-*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
+!URxvt.boldFont:          x:-*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
+URxvt.font:              xft:JetBrains Mono NL:pixelsize=15
+URxvt.boldFont:          xft:JetBrains Mono NL:pixelsize=15
 ! See :help map-alt-keys in VIM
 URxvt.meta8:             false
 URxvt.scrollstyle:       plain
