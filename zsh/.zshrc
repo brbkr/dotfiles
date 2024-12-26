@@ -15,4 +15,4 @@ export PS1="; "
 bindkey -e
 
 alias find_shared="mdfind -onlyin /Users/jtb/Documents/ 'kMDItemIsShared == 1'"
-
+alias jsc=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc
