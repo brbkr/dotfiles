@@ -22,7 +22,16 @@ vim.opt.visualbell = false
 -- Use 'gx' to open an item under the cursor in the default application
 vim.g.netrw_browsex_viewer = "xdg-open"
 
--- Auto commands
+-- C++ indent rules
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = "cpp",
+    callback = function(ev)
+	vim.o.shiftwidth = 8;
+	vim.o.softtabstop = 8;
+    end
+})
+
+-- NIX typically uses 2-space indents
 vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = "nix",
     callback = function(ev)
@@ -31,7 +40,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end
 })
 
--- Perforce commit messages
+-- Perforce commit messages need real tabs
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = '/tmp/tmp.[0-9]*.[0-9]*.[0-9]*',
     callback = function(ev)
@@ -90,5 +99,24 @@ vim.keymap.set('n', '<leader>fc', ':Colors<CR>')
 vim.keymap.set('n', '<leader>ff', ':Files<CR>')
 
 -- LSP -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.clangd.setup{}
+require('lspconfig').pyright.setup{}
+require('lspconfig').clangd.setup{}
+require('CopilotChat').setup{}
+vim.keymap.set('n', 'grr', '<cmd>lua vim.lsp.buf.references()<CR>')
+vim.keymap.set('n', 'grd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+vim.keymap.set('n', 'grD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+vim.keymap.set('n', 'grt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+vim.keymap.set('n', 'grs', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+vim.keymap.set('n', 'grh', '<cmd>lua vim.lsp.buf.hover()<CR>')
+vim.keymap.set('n', 'grm', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+vim.keymap.set('n', 'grf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+vim.keymap.set('n', 'grc', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+vim.keymap.set('n', 'grl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+vim.keymap.set('n', 'grp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+vim.keymap.set('n', 'grw', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
+vim.keymap.set('n', 'grq', '<cmd>lua vim.lsp.diagnostic.set_qflist()<CR>')
+vim.keymap.set('n', 'grv', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
+vim.keymap.set('n', 'grV', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
+
