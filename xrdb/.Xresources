@@ -25,19 +25,22 @@ XTerm.vt100.colorBDMode: true
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.externalBorder:   0
-URxvt.internalBorder:   4
+URxvt.internalBorder:   8
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 !URxvt.font:              x:9x15
 !URxvt.boldFont:          x:9x15
 !URxvt.font:              x:-*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
 !URxvt.boldFont:          x:-*-terminus-medium-r-*-*-16-*-*-*-c-*-*-*
-URxvt.font:              xft:JetBrains Mono NL:pixelsize=15
-URxvt.boldFont:          xft:JetBrains Mono NL:pixelsize=15
+!URxvt.font:              xft:JetBrains Mono NL:pixelsize=15
+!URxvt.boldFont:          xft:JetBrains Mono NL:pixelsize=15
+URxvt.font:              xft:Iosevka Term:pixelsize=16
+URxvt.boldFont:          xft:Iosevka Term:pixelsize=16
 ! See :help map-alt-keys in VIM
 URxvt.meta8:             false
 URxvt.scrollstyle:       plain
 URxvt.secondaryScroll:   right
+URxvt.scrollBar:         false
 URxvt.scrollBar_right:   true
 URxvt.scrollTtyOutput:   false
 URxvt.scrollWithBuffer:  true
@@ -47,7 +50,8 @@ URxvt.saveLines:         8192
 URxvt.visualBell:        true
 URxvt.fading:            5
 URxvt.print-pipe: "cat > /dev/null"
-URxvt.perl-ext-common: default
+!URxvt.perl-ext-common: default
+URxvt.perl-ext-common: 52-osc
 URxvt.pointerColor: white
 URxvt.pointerColor2: black
 
@@ -170,7 +174,7 @@ URxvt.pointerColor2: black
 ! base16-default-dark
 *.foreground:   #d0d0d0
 *.background:   #000000
-*.cursorColor:  #C19020
+*.cursorColor:  #90a959
 *.scrollColor:#333333
 *.color0:       #404040
 *.color8:       #606060
