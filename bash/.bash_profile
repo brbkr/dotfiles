@@ -37,3 +37,4 @@ if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
     # include .bashrc if it exists
     [ -f ~/.bashrc ] && . ~/.bashrc
 fi
+. "$HOME/.cargo/env"
